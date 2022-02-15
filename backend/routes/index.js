@@ -1,6 +1,6 @@
 const express = require('express');
-const createOne = require('../controllers/createOne')
-const findAll = require('../controllers/findAll')
+const createOne = require('../controllers/createOne');
+const findAll = require('../controllers/findAll');
 
 const router = express.Router();
 
