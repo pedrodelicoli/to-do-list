@@ -17,7 +17,7 @@ const useFetchTasks = () => {
     };
     fetchUser();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  });
+  }, []);
 };
 
 export default useFetchTasks;
