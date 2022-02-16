@@ -6,6 +6,7 @@ function Provider(props) {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState();
   const [insert, setInsert] = useState(true);
+  const [update, setUpdate] = useState();
   const [removeTrigger, setRemoveTrigger] = useState(true);
   const [remove, setRemove] = useState();
   const [removeAll, setRemoveAll] = useState();
@@ -23,7 +24,9 @@ function Provider(props) {
     removeTrigger,
     setRemoveTrigger,
     removeAll,
-    setRemoveAll 
+    setRemoveAll,
+    update,
+    setUpdate
   };
 
   return (

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const Input = (props) => {
   const {
-    labelText,
     inputType,
     handleChange,
     placeholder,
@@ -12,17 +11,15 @@ const Input = (props) => {
     testId,
   } = props;
   return (
-    <label htmlFor={id} className={className}>
-      {labelText}
-      <input
-        id={id}
-        type={inputType}
-        onChange={handleChange}
-        placeholder={placeholder}
-        className={className}
-        data-testid={testId}
-      />
-    </label>
+    <input
+      id={id}
+      type={inputType}
+      onChange={handleChange}
+      placeholder={placeholder}
+      className={className}
+      data-testid={testId}
+    />
+    
   );
 };
 
