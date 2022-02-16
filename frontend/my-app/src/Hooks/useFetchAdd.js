@@ -2,22 +2,22 @@ import { useContext, useEffect } from 'react';
 import api from '../services/api';
 import Context from '../Context/Context';
 
-const useFetchTasks = () => {
-  const { setTasks } = useContext(Context);
+const useFetchAdd = () => {
+  const { insert, newTask } = useContext(Context);
 
   useEffect(() => {
-    const fetchUser = async () => {
+    const fetchAdd = async () => {
       try {
-        api.get('/task')
-          .then((response) => response.data)
-          .then((data) => setTasks(data));
+        await api.post('/task', {
+          name: newTask
+        })               
       } catch (err) {
         console.log(err);
       }
     };
-    fetchUser();
+    if (newTask) fetchAdd();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  });
+  }, [insert]);
 };
 
-export default useFetchTasks;
+export default useFetchAdd;

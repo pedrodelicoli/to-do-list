@@ -2,22 +2,20 @@ import { useContext, useEffect } from 'react';
 import api from '../services/api';
 import Context from '../Context/Context';
 
-const useFetchTasks = () => {
-  const { setTasks } = useContext(Context);
+const useFetchDelete = () => {
+  const { removeAll } = useContext(Context);
 
   useEffect(() => {
-    const fetchUser = async () => {
+    const fetchRemoveAll = async () => {
       try {
-        api.get('/task')
-          .then((response) => response.data)
-          .then((data) => setTasks(data));
+        await api.delete('/task')          
       } catch (err) {
         console.log(err);
       }
     };
-    fetchUser();
+    if(removeAll) fetchRemoveAll();  
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  });
+  }, [removeAll]);
 };
 
-export default useFetchTasks;
+export default useFetchDelete;
