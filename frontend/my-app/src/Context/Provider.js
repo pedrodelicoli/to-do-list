@@ -3,12 +3,30 @@ import PropTypes from 'prop-types';
 import Context from './Context';
 
 function Provider(props) {
-  const [tasks, setTasks] = useState();
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState();
+  const [insert, setInsert] = useState(true);
+  const [update, setUpdate] = useState();
+  const [removeTrigger, setRemoveTrigger] = useState(true);
+  const [remove, setRemove] = useState();
+  const [removeAll, setRemoveAll] = useState();
   
   const { children } = props;
   const contextValue = {
     tasks,
-    setTasks,    
+    setTasks, 
+    newTask,
+    setNewTask,
+    insert,
+    setInsert,
+    remove,
+    setRemove,
+    removeTrigger,
+    setRemoveTrigger,
+    removeAll,
+    setRemoveAll,
+    update,
+    setUpdate
   };
 
   return (
