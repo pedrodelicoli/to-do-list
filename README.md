@@ -44,15 +44,6 @@ O banco escolhido para a aplicação foi `Mongodb`, pela agilidade no desenvolvi
 
 ---
 
-## Cobertura de teste
-
-A atual cobertura de testes é de: 
-- `98%` das linhas;
-
-![cobertura de testes unitários](./pictures/test-unit-coverage.png)
-
----
-
 ## Próximos passos
 
 * Implementação dos testes unitarios 
@@ -65,11 +56,8 @@ A atual cobertura de testes é de:
 <div style="display: flex; align-items: center; justify-content: space-between;">
   <div>
     <h2> Pedro Delicoli </h2>
-  <div style="display: flex; align-items: center;">
-    <img src="./images/linkedIn_logo.jpg" alt="LinkedIn" style="width:20px;"/>  
-  </div>  
   <div style="display: flex;align-items: center;">
-    <img src="./images/github_logo.png" alt="LinkedIn" style="width:20px;"/> https://github.com/pedrodelicoli
+    <img src="./frontend/my-app/images/linkedin-logo.png" alt="LinkedIn" style="width:20px;"/> https://github.com/pedrodelicoli
   </div>
   <br/>
   Email: pedrodelicoli@hotmail.com  
