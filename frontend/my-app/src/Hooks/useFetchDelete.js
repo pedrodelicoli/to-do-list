@@ -7,13 +7,9 @@ const useFetchDelete = () => {
 
   useEffect(() => {
     const fetchRemove = async () => {
-      try {
-        await api.delete(`/task/${remove}`)          
-      } catch (err) {
-        console.log(err);
-      }
+      await api.delete(`/task/${remove}`);
     };
-    if (remove) fetchRemove();  
+    if (remove) fetchRemove();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [removeTrigger]);
 };

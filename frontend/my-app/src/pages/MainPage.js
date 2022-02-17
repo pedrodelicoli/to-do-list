@@ -9,15 +9,13 @@ import Table from '../components/Table';
 import Input from '../components/Input';
 import Button from '../components/Button';
 
-
-
-const MainPage = () => {
+function MainPage() {
   useFetchTasks();
   useFetchAdd();
   useFetchRemove();
   useFetchDelete();
   useFetchUpdate();
-  const { 
+  const {
     setNewTask,
     setInsert,
     insert,
@@ -26,66 +24,66 @@ const MainPage = () => {
     removeAll,
     setRemoveAll,
     update,
-    setUpdate } = useContext(Context);  
+    setUpdate,
+  } = useContext(Context);
   const handleInput = ({ target: { value } }) => {
-    setNewTask(value);  
-  }; 
+    setNewTask(value);
+  };
 
   const handleInsert = () => {
-    insert ? setInsert(false) : setInsert(true)  
+    insert ? setInsert(false) : setInsert(true);
   };
   const handleRemove = () => {
-    removeTrigger ? setRemoveTrigger(false) : setRemoveTrigger(true)  
+    removeTrigger ? setRemoveTrigger(false) : setRemoveTrigger(true);
   };
 
   const handleRemoveAll = () => {
-    removeAll ? setRemoveAll(false) : setRemoveAll(true)  
+    removeAll ? setRemoveAll(false) : setRemoveAll(true);
   };
 
   const handleUpdate = () => {
-    update ? setUpdate(false) : setUpdate(true)  
+    update ? setUpdate(false) : setUpdate(true);
   };
-  
-  
+
   return (
     <div>
-      <span className='span'>Digite Aqui</span>
+      <span className="span">Digite Aqui</span>
       <Input
-        labelText='Inserir Nova'
-        id='Inserir'
-        inputType='text'
+        labelText="Inserir Nova"
+        id="Inserir"
+        inputType="text"
         handleChange={handleInput}
-        placeholder='Nova Tarefa'
-        className='input'
-        testId=''      
+        placeholder="Nova Tarefa"
+        className="input"
+        testId=""
       />
       <Button
-        buttonName='Adicionar'
+        buttonName="Adicionar"
         handleClick={handleInsert}
-        className='buttom'
-        testId='add-buttom'
+        className="buttom"
+        testId="add-buttom"
       />
       <Button
-        buttonName='Alterar'
+        buttonName="Alterar"
         handleClick={handleUpdate}
-        className='buttom'
-        testId='update-buttom'
-      />  
+        className="buttom"
+        testId="update-buttom"
+      />
       <Table />
       <Button
-        buttonName='Remover Selecionada'
+        buttonName="Remover Selecionada"
         handleClick={handleRemove}
-        className='buttom'
-        testId='remove-buttom'
-      />  
+        className="buttom"
+        testId="remove-buttom"
+      />
       <Button
-        buttonName='Remover Todas'
+        buttonName="Remover Todas"
         handleClick={handleRemoveAll}
-        className='buttom'
-        testId='remove-buttom'
-      />        
+        className="buttom"
+        testId="remove-buttom"
+      />
     </div>
   );
-};
+}
 
 export default MainPage;

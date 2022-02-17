@@ -7,16 +7,12 @@ const useFetchUpdate = () => {
 
   useEffect(() => {
     const fetchUpdate = async () => {
-      try {
-        await api.put('/task/', {
-          id: remove,
-          name: newTask
-        })          
-      } catch (err) {
-        console.log(err);
-      }
+      await api.put('/task/', {
+        id: remove,
+        name: newTask,
+      });
     };
-    if (remove) fetchUpdate();  
+    if (remove) fetchUpdate();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [update]);
 };

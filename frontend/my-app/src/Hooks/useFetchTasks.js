@@ -7,13 +7,9 @@ const useFetchTasks = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      try {
-        api.get('/task')
-          .then((response) => response.data)
-          .then((data) => setTasks(data));
-      } catch (err) {
-        console.log(err);
-      }
+      api.get('/task')
+        .then((response) => response.data)
+        .then((data) => setTasks(data));
     };
     fetchUser();
   // eslint-disable-next-line react-hooks/exhaustive-deps

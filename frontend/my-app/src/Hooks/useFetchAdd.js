@@ -7,13 +7,9 @@ const useFetchAdd = () => {
 
   useEffect(() => {
     const fetchAdd = async () => {
-      try {
-        await api.post('/task', {
-          name: newTask
-        })               
-      } catch (err) {
-        console.log(err);
-      }
+      await api.post('/task', {
+        name: newTask,
+      });
     };
     if (newTask) fetchAdd();
   // eslint-disable-next-line react-hooks/exhaustive-deps

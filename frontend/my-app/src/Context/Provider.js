@@ -10,11 +10,11 @@ function Provider(props) {
   const [removeTrigger, setRemoveTrigger] = useState(true);
   const [remove, setRemove] = useState();
   const [removeAll, setRemoveAll] = useState();
-  
+
   const { children } = props;
   const contextValue = {
     tasks,
-    setTasks, 
+    setTasks,
     newTask,
     setNewTask,
     insert,
@@ -26,7 +26,7 @@ function Provider(props) {
     removeAll,
     setRemoveAll,
     update,
-    setUpdate
+    setUpdate,
   };
 
   return (

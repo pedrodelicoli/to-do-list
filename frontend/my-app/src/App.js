@@ -9,7 +9,7 @@ function App() {
     <Provider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainPage />} />          
+          <Route path="/" element={<MainPage />} />
         </Routes>
       </BrowserRouter>
     </Provider>

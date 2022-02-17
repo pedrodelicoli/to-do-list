@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Input = (props) => {
+function Input(props) {
   const {
     inputType,
     handleChange,
@@ -19,9 +19,9 @@ const Input = (props) => {
       className={className}
       data-testid={testId}
     />
-    
+
   );
-};
+}
 
 const { string, func } = PropTypes;
 
