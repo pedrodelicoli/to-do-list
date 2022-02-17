@@ -26,12 +26,11 @@ function Input(props) {
 const { string, func } = PropTypes;
 
 Input.propTypes = {
-  labelText: string.isRequired,
   inputType: string.isRequired,
   handleChange: func.isRequired,
-  placeholder: string,
-  className: string,
-  id: string,
+  placeholder: string.isRequired,
+  className: string.isRequired,
+  id: string.isRequired,
   testId: string.isRequired,
 };
 

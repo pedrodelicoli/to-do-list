@@ -17,6 +17,7 @@ function Table() {
         <li onClick={handleClick} id={task._id} key={task._id} className="list">{task.name}</li>
       ));
     }
+    return null;
   };
 
   return (
