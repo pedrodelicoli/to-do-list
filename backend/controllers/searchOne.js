@@ -6,7 +6,6 @@ const searchOne = async (req, res, next) => {
       const task = await findOne(id);
       return res.status(200).send(task);
     } catch (err) {
-      console.log(err);
       next(err);
     }  
 };

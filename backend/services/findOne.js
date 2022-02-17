@@ -1,12 +1,9 @@
 const findById = require('../models/findById');
+const { errorHandler } = require('../utils/errorhandler')
 
 const findOne = async (id) => {
-  try {
-    const task = await findById(id);
-    return task;
-  } catch (err) {
-      console.log(err);
-  }  
-};
-
-module.exports = findOne;  
+  const task = await findById(id);
+  if (!task) throw errorHandler(404, 'Tarefa não localizada')
+  return task;
+}  
+module.exports = findOne;
