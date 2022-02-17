@@ -53,7 +53,7 @@ function MainPage() {
         id="Inserir"
         inputType="text"
         handleChange={handleInput}
-        placeholder="Nova Tarefa"
+        placeholder="Descrição"
         className="input"
         testId=""
       />

@@ -6,9 +6,13 @@ function Table() {
   const handleClick = ({ target }) => {
     setRemove(target.id);
     target.classList.toggle('completed');
+    target.classList.toggle('list');
     const list = document.querySelectorAll('li');
     list.forEach((item) => {
-      if (item.id !== target.id) item.classList.remove('completed');
+      if (item.id !== target.id) {
+        item.classList.remove('completed');
+        item.classList.add('list');
+      }
     });
   };
   const taskList = () => {

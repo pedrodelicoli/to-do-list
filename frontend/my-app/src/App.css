@@ -30,8 +30,6 @@ li {
   padding: 8px;
 }
 
-.tasks-table li:nth-child(even){background-color: #dad1d1;}
-
 .tasks-table li:hover {background-color: #ddd;}
 
 .textul {  
@@ -62,10 +60,18 @@ li {
   opacity: 90%;
 }
 
-
-
-
-.completed {
+.list {
   color: rgb(106, 41, 167);
   font-weight: 600;
+  background-color: white;
+}
+
+.completed {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  background-color: rgb(146, 146, 146);
+}
+
+.span {
+  color: rgb(106, 41, 167);
 }
