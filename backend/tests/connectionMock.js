@@ -11,6 +11,6 @@ const getConnection = async () => {
     const urlMock = await memoryServer.getUri();
 
     return MongoClient.connect(urlMock, OPTIONS);
-}
+};
 
 module.exports = { getConnection };

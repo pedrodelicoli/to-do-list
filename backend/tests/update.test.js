@@ -7,33 +7,33 @@ const app = require('../api/app');
 
 chai.use(chaiHttp);
 
-describe('PUT /task', () => {
-    describe('Edita tarefa já criada', () => {
+describe('PUT /task', function () {
+    describe('Edita tarefa já criada', function () {
       let response;
-      let tasks
-      let updateTask
-      before( async () => {
+      let tasks;
+      let updateTask;
+      before(async function () {
         tasks = await chai.request(app)
-          .get('/task')
-        let task = tasks.body[0] 
+          .get('/task');
+        const task = tasks.body[0]; 
         response = await chai.request(app)
           .put('/task')
           .send({
             id: task._id,
-            name: "Correr"
-          })
+            name: 'Correr',
+          });
           updateTask = await chai.request(app)
-          .get(`/task/${task._id}`)   
-      }) 
-      it('retorna código 200', () => {    
+          .get(`/task/${task._id}`);   
+      }); 
+      it('retorna código 200', function () {    
         expect(updateTask).to.have.status(200);
-      })  
-      it('resposta é o um objeto', () => {
+      });  
+      it('resposta é o um objeto', function () {
         expect(response.body).to.be.an('object');        
-      })
-      it('consegue modificar tarefa com sucesso', () => {
-        const { name } = updateTask.body
+      });
+      it('consegue modificar tarefa com sucesso', function () {
+        const { name } = updateTask.body;
         expect(name).to.be.equal('Correr');  
-      })  
-    })    
+      });  
+    });    
 });

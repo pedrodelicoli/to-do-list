@@ -7,29 +7,28 @@ const app = require('../api/app');
 
 chai.use(chaiHttp);
 
-describe('DELETE /task', () => {
-    describe('Remove tarefa do banco de dados', () => {
-      let response;
-      let tasks
-      let updateTask
-      before( async () => {
+describe('DELETE /task', function () {
+    describe('Remove tarefa do banco de dados', function () {
+      let tasks;
+      let deleted;
+      before(async function () {
         tasks = await chai.request(app)
           .get('/task');
-        let task = tasks.body[0];
-        response = await chai.request(app)
+        const task = tasks.body[0];
+        await chai.request(app)
           .delete(`/task/${task._id}`);    
         deleted = await chai.request(app)
-          .get(`/task/${task._id}`)   
-      }) 
-      it('retorna código 404', () => {    
+          .get(`/task/${task._id}`);   
+      }); 
+      it('retorna código 404', function () {    
         expect(deleted).to.have.status(404);
-      })  
-      it('resposta é o um objeto', () => {
+      });  
+      it('resposta é o um objeto', function () {
         expect(deleted.body).to.be.an('object');        
-      })
-      it('resposta contém a mensagem "Tarefa não localizada"', () => {
+      });
+      it('resposta contém a mensagem "Tarefa não localizada"', function () {
         const { message } = deleted.body;  
         expect(message).to.be.equal('Tarefa não localizada'); 
-      })  
-    })    
+      });  
+    });    
 });
