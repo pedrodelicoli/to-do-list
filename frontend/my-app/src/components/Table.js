@@ -2,7 +2,13 @@ import React, { useContext } from 'react';
 import Context from '../Context/Context';
 
 function Table() {
-  const { tasks, setRemove } = useContext(Context);
+  const {
+    tasks,
+    setRemove,
+    setNewTask,
+    setUpdate,
+    update,
+  } = useContext(Context);
   const handleClick = ({ target }) => {
     setRemove(target.id);
     target.classList.toggle('completed');
@@ -15,10 +21,24 @@ function Table() {
       }
     });
   };
+
+  const handleSelect = (obj) => {
+    setNewTask({ state: obj.target.value });
+    setRemove(obj.target.id);
+    update ? setUpdate(false) : setUpdate(true);
+  };
   const taskList = () => {
     if (tasks) {
       return tasks.map((task) => (
-        <li onClick={handleClick} id={task._id} key={task._id} className="list">{task.name}</li>
+        <div key={task._id + 6} className="list">
+          <li onClick={handleClick} id={task._id} key={task._id}>{task.name}</li>
+          <select id={task._id} onClick={handleSelect} name="estado">
+            <option value="Status" selected disabled hidden>{task.state || 'Status'}</option>
+            <option value="Pendente">Pendente</option>
+            <option value="Em Andamento">Em Andamento</option>
+            <option value="Finalizada">Finalizada</option>
+          </select>
+        </div>
       ));
     }
     return null;

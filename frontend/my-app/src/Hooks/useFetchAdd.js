@@ -8,7 +8,7 @@ const useFetchAdd = () => {
   useEffect(() => {
     const fetchAdd = async () => {
       await api.post('/task', {
-        name: newTask,
+        name: newTask.name,
       });
     };
     if (newTask) fetchAdd();

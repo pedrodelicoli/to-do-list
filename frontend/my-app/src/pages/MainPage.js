@@ -27,7 +27,9 @@ function MainPage() {
     setUpdate,
   } = useContext(Context);
   const handleInput = ({ target: { value } }) => {
-    setNewTask(value);
+    setNewTask({
+      name: value,
+    });
   };
 
   const handleInsert = () => {

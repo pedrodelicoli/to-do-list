@@ -9,7 +9,8 @@ const useFetchUpdate = () => {
     const fetchUpdate = async () => {
       await api.put('/task/', {
         id: remove,
-        name: newTask,
+        name: newTask.name,
+        state: newTask.state,
       });
     };
     if (remove) fetchUpdate();
